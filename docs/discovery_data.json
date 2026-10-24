@@ -1,0 +1,1711 @@
+{
+  "csv_profiles": {
+    "deletion_requests.csv": {
+      "file": "dataset\\deletion_requests.csv",
+      "total_rows": 518,
+      "header": [
+        "case_id",
+        "email",
+        "requested_at",
+        "reported_status",
+        "reported_at",
+        "audit_at",
+        "request_text"
+      ],
+      "columns": [
+        {
+          "column": "case_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 518,
+          "top_5": [
+            [
+              "case_33",
+              1
+            ],
+            [
+              "case_34",
+              1
+            ],
+            [
+              "case_35",
+              1
+            ],
+            [
+              "case_36",
+              1
+            ],
+            [
+              "case_37",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "email",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 517,
+          "top_5": [
+            [
+              "ingrid.dahl@outlook.com",
+              2
+            ],
+            [
+              "haruka.s1838@zoho.com",
+              1
+            ],
+            [
+              "g.silva76@gmail.com",
+              1
+            ],
+            [
+              "aadebayo3975@fastmail.com",
+              1
+            ],
+            [
+              "abena.o189491@zoho.com",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "requested_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 508,
+          "top_5": [
+            [
+              "2026-09-06T12:00:00Z",
+              3
+            ],
+            [
+              "2026-09-02T12:00:00Z",
+              3
+            ],
+            [
+              "2026-09-07T12:00:00Z",
+              2
+            ],
+            [
+              "2026-09-05T12:00:00Z",
+              2
+            ],
+            [
+              "2026-09-03T12:00:00Z",
+              2
+            ]
+          ]
+        },
+        {
+          "column": "reported_status",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 3,
+          "top_5": [
+            [
+              "COMPLETE",
+              254
+            ],
+            [
+              "PARTIALLY_COMPLETE",
+              152
+            ],
+            [
+              "NOT_STARTED",
+              112
+            ]
+          ]
+        },
+        {
+          "column": "reported_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 238,
+          "top_5": [
+            [
+              "2026-09-05T12:00:00Z",
+              4
+            ],
+            [
+              "2026-09-09T12:00:00Z",
+              3
+            ],
+            [
+              "2026-09-12T11:00:00Z",
+              3
+            ],
+            [
+              "2026-08-29T10:00:00Z",
+              3
+            ],
+            [
+              "2026-09-04T09:00:00Z",
+              3
+            ]
+          ]
+        },
+        {
+          "column": "audit_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 72,
+          "top_5": [
+            [
+              "2026-09-11T08:00:00Z",
+              10
+            ],
+            [
+              "2026-09-06T07:00:00Z",
+              10
+            ],
+            [
+              "2026-09-01T06:00:00Z",
+              10
+            ],
+            [
+              "2026-08-27T12:00:00Z",
+              10
+            ],
+            [
+              "2026-08-22T11:00:00Z",
+              10
+            ]
+          ]
+        },
+        {
+          "column": "request_text",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 375,
+          "top_5": [
+            [
+              "Solicito a exclus\u00e3o permanente da conta associada a este e-mail. Verifiquem os identificadores atuais e anteriores conforme o processo de privacidade. Por favor, confirmem o resultado quando a an\u00e1lise terminar.",
+              14
+            ],
+            [
+              "\uc774 \uc774\uba54\uc77c \uc8fc\uc18c\uc5d0 \uc5f0\uacb0\ub41c \uacc4\uc815\uc758 \uc601\uad6c \uc0ad\uc81c\ub97c \uc694\uccad\ud569\ub2c8\ub2e4. \uac1c\uc778\uc815\ubcf4 \ucc98\ub9ac \uc808\ucc28\uc5d0 \ub530\ub77c \ud604\uc7ac \ubc0f \uc774\uc804 \uc2dd\ubcc4\uc790\ub97c \uac80\ud1a0\ud574 \uc8fc\uc138\uc694. \uac80\ud1a0\uac00 \uc644\ub8cc\ub418\uba74 \uacb0\uacfc\ub97c \ud655\uc778\ud574 \uc8fc\uc138\uc694.",
+              12
+            ],
+            [
+              "Solicito la eliminaci\u00f3n permanente de la cuenta asociada a este correo. Revisen los identificadores actuales y anteriores seg\u00fan su pol\u00edtica de privacidad. Por favor, confirmen el resultado cuando termine la revisi\u00f3n.",
+              12
+            ],
+            [
+              "\u3053\u306e\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u306b\u95a2\u9023\u3059\u308b\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u5b8c\u5168\u306a\u524a\u9664\u3092\u4f9d\u983c\u3057\u307e\u3059\u3002 \u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u624b\u7d9a\u304d\u306b\u5f93\u3044\u3001\u73fe\u5728\u304a\u3088\u3073\u904e\u53bb\u306e\u8b58\u5225\u60c5\u5831\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002 \u78ba\u8a8d\u304c\u5b8c\u4e86\u3057\u305f\u3089\u7d50\u679c\u3092\u304a\u77e5\u3089\u305b\u304f\u3060\u3055\u3044\u3002",
+              12
+            ],
+            [
+              "Je demande la suppression d\u00e9finitive du compte associ\u00e9 \u00e0 cette adresse e-mail. Veuillez examiner les identifiants actuels et ant\u00e9rieurs conform\u00e9ment \u00e0 votre proc\u00e9dure de confidentialit\u00e9. Merci de confirmer le r\u00e9sultat une fois la v\u00e9rification termin\u00e9e.",
+              12
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "case_33",
+          "ingrid.dahl@outlook.com",
+          "2026-07-16T08:00:00Z",
+          "COMPLETE",
+          "2026-07-18T02:00:00Z",
+          "2026-07-19T13:00:00Z",
+          "Please close my account and process the associated personal-data deletion. Please handle any copies that fall within the scope of the deletion request. Please confirm when the review is complete."
+        ],
+        [
+          "case_34",
+          "haruka.s1838@zoho.com",
+          "2026-09-24T08:00:00Z",
+          "COMPLETE",
+          "2026-09-26T02:00:00Z",
+          "2026-09-27T13:00:00Z",
+          "I would like the account associated with this address to be erased. Please handle any copies that fall within the scope of the deletion request. Please contact me if you need information to verify the request."
+        ],
+        [
+          "case_35",
+          "g.silva76@gmail.com",
+          "2026-08-30T03:00:00Z",
+          "NOT_STARTED",
+          "2026-08-31T21:00:00Z",
+          "2026-09-02T08:00:00Z",
+          "Please close my account and process the associated personal-data deletion. Please check the records connected to the account before confirming completion. Please contact me if you need information to verify the request."
+        ]
+      ]
+    },
+    "sample_deletion_requests.csv": {
+      "file": "dataset\\sample_deletion_requests.csv",
+      "total_rows": 32,
+      "header": [
+        "case_id",
+        "email",
+        "requested_at",
+        "reported_status",
+        "reported_at",
+        "audit_at",
+        "request_text"
+      ],
+      "columns": [
+        {
+          "column": "case_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 32,
+          "top_5": [
+            [
+              "case_01",
+              1
+            ],
+            [
+              "case_02",
+              1
+            ],
+            [
+              "case_03",
+              1
+            ],
+            [
+              "case_04",
+              1
+            ],
+            [
+              "case_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "email",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 32,
+          "top_5": [
+            [
+              "amina.elmasri@gmail.com",
+              1
+            ],
+            [
+              "mateo.rios@outlook.com",
+              1
+            ],
+            [
+              "l.fontaine46@yahoo.com",
+              1
+            ],
+            [
+              "thandiwe.n@gmail.com",
+              1
+            ],
+            [
+              "leila.haddad@yahoo.com",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "requested_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 30,
+          "top_5": [
+            [
+              "2026-09-04T12:00:00Z",
+              3
+            ],
+            [
+              "2026-08-18T09:14:00Z",
+              1
+            ],
+            [
+              "2026-08-21T18:06:00Z",
+              1
+            ],
+            [
+              "2026-09-13T11:00:00Z",
+              1
+            ],
+            [
+              "2026-08-25T12:32:00Z",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "reported_status",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 3,
+          "top_5": [
+            [
+              "COMPLETE",
+              17
+            ],
+            [
+              "NOT_STARTED",
+              10
+            ],
+            [
+              "PARTIALLY_COMPLETE",
+              5
+            ]
+          ]
+        },
+        {
+          "column": "reported_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 22,
+          "top_5": [
+            [
+              "2026-09-06T12:00:00Z",
+              3
+            ],
+            [
+              "2026-09-02T12:00:00Z",
+              3
+            ],
+            [
+              "2026-08-30T12:00:00Z",
+              3
+            ],
+            [
+              "2026-08-22T12:00:00Z",
+              2
+            ],
+            [
+              "2026-09-01T10:00:00Z",
+              2
+            ]
+          ]
+        },
+        {
+          "column": "audit_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 13,
+          "top_5": [
+            [
+              "2026-09-15T12:00:00Z",
+              15
+            ],
+            [
+              "2026-09-26T11:00:00Z",
+              3
+            ],
+            [
+              "2026-10-01T12:00:00Z",
+              3
+            ],
+            [
+              "2026-09-21T10:00:00Z",
+              2
+            ],
+            [
+              "2026-09-03T11:30:00Z",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "request_text",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 32,
+          "top_5": [
+            [
+              "Hi, I haven\u2019t used this account in years and would like it closed. Please remove the profile and the personal details attached to it.",
+              1
+            ],
+            [
+              "Intent\u00e9 eliminar mi cuenta ayer, pero la p\u00e1gina termin\u00f3 mostrando un error. \u00bfPueden comprobar si todav\u00eda queda alg\u00fan dato y completar la eliminaci\u00f3n si hace falta?",
+              1
+            ],
+            [
+              "Je demande la suppression d\u00e9finitive du compte associ\u00e9 \u00e0 cette adresse e-mail. Veuillez examiner les identifiants actuels et ant\u00e9rieurs conform\u00e9ment \u00e0 votre proc\u00e9dure de confidentialit\u00e9. Merci de confirmer le r\u00e9sultat une fois la v\u00e9rification termin\u00e9e.",
+              1
+            ],
+            [
+              "I\u2019m deleting my account. You can keep anonymous statistics, but nothing in analytics should still point back to me.",
+              1
+            ],
+            [
+              "I deleted this account and received a confirmation, but the same email address is still recognized. Please remove any remaining copy of my profile.",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "case_01",
+          "amina.elmasri@gmail.com",
+          "2026-08-18T09:14:00Z",
+          "COMPLETE",
+          "2026-08-20T16:42:00Z",
+          "2026-09-03T11:30:00Z",
+          "Hi, I haven\u2019t used this account in years and would like it closed. Please remove the profile and the personal details attached to it."
+        ],
+        [
+          "case_02",
+          "mateo.rios@outlook.com",
+          "2026-08-21T18:06:00Z",
+          "PARTIALLY_COMPLETE",
+          "2026-08-22T07:25:00Z",
+          "2026-09-04T15:00:00Z",
+          "Intent\u00e9 eliminar mi cuenta ayer, pero la p\u00e1gina termin\u00f3 mostrando un error. \u00bfPueden comprobar si todav\u00eda queda alg\u00fan dato y completar la eliminaci\u00f3n si hace falta?"
+        ],
+        [
+          "case_03",
+          "l.fontaine46@yahoo.com",
+          "2026-09-13T11:00:00Z",
+          "COMPLETE",
+          "2026-09-15T11:00:00Z",
+          "2026-09-26T11:00:00Z",
+          "Je demande la suppression d\u00e9finitive du compte associ\u00e9 \u00e0 cette adresse e-mail. Veuillez examiner les identifiants actuels et ant\u00e9rieurs conform\u00e9ment \u00e0 votre proc\u00e9dure de confidentialit\u00e9. Merci de confirmer le r\u00e9sultat une fois la v\u00e9rification termin\u00e9e."
+        ]
+      ]
+    },
+    "sample_output.csv": {
+      "file": "dataset\\sample_output.csv",
+      "total_rows": 32,
+      "header": [
+        "case_id",
+        "deletion_status",
+        "steps_json"
+      ],
+      "columns": [
+        {
+          "column": "case_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 32,
+          "top_5": [
+            [
+              "case_01",
+              1
+            ],
+            [
+              "case_02",
+              1
+            ],
+            [
+              "case_03",
+              1
+            ],
+            [
+              "case_04",
+              1
+            ],
+            [
+              "case_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "deletion_status",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 2,
+          "top_5": [
+            [
+              "INCOMPLETE",
+              22
+            ],
+            [
+              "COMPLETE",
+              10
+            ]
+          ]
+        },
+        {
+          "column": "steps_json",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 32,
+          "top_5": [
+            [
+              "[{\"evidence_id\":\"evidence_54\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_001\",\"state\":\"ABSENT\",\"step_no\":1,\"system_id\":\"account_service\"}]",
+              1
+            ],
+            [
+              "[{\"evidence_id\":\"evidence_54\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_002\",\"state\":\"ABSENT\",\"step_no\":1,\"system_id\":\"account_service\"}]",
+              1
+            ],
+            [
+              "[{\"step_no\":1,\"phase\":\"VERIFICATION\",\"system_id\":\"account_service\",\"resource_id\":\"account_7566\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"state\":\"ABSENT\",\"evidence_id\":\"evidence_94\"},{\"step_no\":2,\"phase\":\"VERIFICATION\",\"system_id\":\"security_service\",\"resource_id\":\"audit_record_2016\",\"operation\":\"VERIFY_RECORD_PRESENT\",\"state\":\"PRESENT\",\"evidence_id\":\"evidence_94\"},{\"step_no\":3,\"phase\":\"VERIFICATION\",\"system_id\":\"analytics_platform\",\"resource_id\":\"analytics_9406\",\"operation\":\"VERIFY_RECORD_ANONYMIZED\",\"state\":\"ANONYMIZED\",\"evidence_id\":\"evidence_94\"}]",
+              1
+            ],
+            [
+              "[{\"evidence_id\":\"evidence_54\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_004\",\"state\":\"ABSENT\",\"step_no\":1,\"system_id\":\"account_service\"},{\"evidence_id\":\"evidence_56\",\"operation\":\"VERIFY_RECORD_ANONYMIZED\",\"phase\":\"VERIFICATION\",\"resource_id\":\"analytics_901\",\"state\":\"ANONYMIZED\",\"step_no\":2,\"system_id\":\"analytics_platform\"}]",
+              1
+            ],
+            [
+              "[{\"evidence_id\":\"evidence_54\",\"operation\":\"REPORT_REMAINING_RECORD\",\"phase\":\"FINDING\",\"resource_id\":\"account_005\",\"state\":\"PRESENT\",\"step_no\":1,\"system_id\":\"account_service\"},{\"evidence_id\":\"\",\"operation\":\"DELETE_RECORD\",\"phase\":\"REMEDIATION\",\"resource_id\":\"account_005\",\"state\":\"ABSENT\",\"step_no\":2,\"system_id\":\"account_service\"},{\"evidence_id\":\"\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_005\",\"state\":\"ABSENT\",\"step_no\":3,\"system_id\":\"account_service\"}]",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "case_01",
+          "COMPLETE",
+          "[{\"evidence_id\":\"evidence_54\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_001\",\"state\":\"ABSENT\",\"step_no\":1,\"system_id\":\"account_service\"}]"
+        ],
+        [
+          "case_02",
+          "COMPLETE",
+          "[{\"evidence_id\":\"evidence_54\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"phase\":\"VERIFICATION\",\"resource_id\":\"account_002\",\"state\":\"ABSENT\",\"step_no\":1,\"system_id\":\"account_service\"}]"
+        ],
+        [
+          "case_03",
+          "COMPLETE",
+          "[{\"step_no\":1,\"phase\":\"VERIFICATION\",\"system_id\":\"account_service\",\"resource_id\":\"account_7566\",\"operation\":\"VERIFY_RECORD_ABSENT\",\"state\":\"ABSENT\",\"evidence_id\":\"evidence_94\"},{\"step_no\":2,\"phase\":\"VERIFICATION\",\"system_id\":\"security_service\",\"resource_id\":\"audit_record_2016\",\"operation\":\"VERIFY_RECORD_PRESENT\",\"state\":\"PRESENT\",\"evidence_id\":\"evidence_94\"},{\"step_no\":3,\"phase\":\"VERIFICATION\",\"system_id\":\"analytics_platform\",\"resource_id\":\"analytics_9406\",\"operation\":\"VERIFY_RECORD_ANONYMIZED\",\"state\":\"ANONYMIZED\",\"evidence_id\":\"evidence_94\"}]"
+        ]
+      ]
+    },
+    "user_identities.csv": {
+      "file": "dataset\\user_identities.csv",
+      "total_rows": 850,
+      "header": [
+        "user_id",
+        "name",
+        "email",
+        "phone",
+        "email_hash",
+        "updated_at"
+      ],
+      "columns": [
+        {
+          "column": "user_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 850,
+          "top_5": [
+            [
+              "user_01",
+              1
+            ],
+            [
+              "user_02",
+              1
+            ],
+            [
+              "user_03",
+              1
+            ],
+            [
+              "user_04",
+              1
+            ],
+            [
+              "user_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "name",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 847,
+          "top_5": [
+            [
+              "Mateo R\u00edos",
+              2
+            ],
+            [
+              "Thandiwe Ndlovu",
+              2
+            ],
+            [
+              "Gabriel Costa",
+              2
+            ],
+            [
+              "Amina El-Masri",
+              1
+            ],
+            [
+              "Oliver Bennett",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "email",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 850,
+          "top_5": [
+            [
+              "amina.elmasri@gmail.com",
+              1
+            ],
+            [
+              "mateo.rios@outlook.com",
+              1
+            ],
+            [
+              "oliver-bennett@gmail.com",
+              1
+            ],
+            [
+              "thandiwe.n@gmail.com",
+              1
+            ],
+            [
+              "leila.haddad@yahoo.com",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "phone",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 850,
+          "top_5": [
+            [
+              "+971 50 482 7316",
+              1
+            ],
+            [
+              "+34 612 847 593",
+              1
+            ],
+            [
+              "+1 (202) 555-0103",
+              1
+            ],
+            [
+              "+27 71 684 5928",
+              1
+            ],
+            [
+              "+212 6 48 27 15 93",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "email_hash",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 850,
+          "top_5": [
+            [
+              "d4e1f59abcf9a1e0cfdc7c27ad6c07ed4ff88b326a16ed5eed5ec6bc31618c93",
+              1
+            ],
+            [
+              "fad1c282b6b8ff346ee92e617331f69c2b6bb345af954eeb44581c57529eab9d",
+              1
+            ],
+            [
+              "1fa7764c96e40e8570cbb7569f707f6d84c593cecbe5c1ed2b0a07a624dba039",
+              1
+            ],
+            [
+              "f730ef60615bde7a8f5ee21138637b4e9d4094855fbb02da6afcdba9c076281f",
+              1
+            ],
+            [
+              "62667ed065b846a842474f916da51b658edb0f9754ab2da6bf38e68779ff0d08",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "updated_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 850,
+          "top_5": [
+            [
+              "2026-05-28T04:03:00Z",
+              1
+            ],
+            [
+              "2026-04-24T07:44:00Z",
+              1
+            ],
+            [
+              "2026-03-14T14:21:00Z",
+              1
+            ],
+            [
+              "2026-03-21T20:59:00Z",
+              1
+            ],
+            [
+              "2026-02-14T17:33:00Z",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "user_01",
+          "Amina El-Masri",
+          "amina.elmasri@gmail.com",
+          "+971 50 482 7316",
+          "d4e1f59abcf9a1e0cfdc7c27ad6c07ed4ff88b326a16ed5eed5ec6bc31618c93",
+          "2026-05-28T04:03:00Z"
+        ],
+        [
+          "user_02",
+          "Mateo R\u00edos",
+          "mateo.rios@outlook.com",
+          "+34 612 847 593",
+          "fad1c282b6b8ff346ee92e617331f69c2b6bb345af954eeb44581c57529eab9d",
+          "2026-04-24T07:44:00Z"
+        ],
+        [
+          "user_03",
+          "Oliver Bennett",
+          "oliver-bennett@gmail.com",
+          "+1 (202) 555-0103",
+          "1fa7764c96e40e8570cbb7569f707f6d84c593cecbe5c1ed2b0a07a624dba039",
+          "2026-03-14T14:21:00Z"
+        ]
+      ]
+    },
+    "user_audit_log.csv": {
+      "file": "dataset\\user_audit_log.csv",
+      "total_rows": 306,
+      "header": [
+        "audit_id",
+        "user_id",
+        "event_time",
+        "field_name",
+        "old_value",
+        "new_value"
+      ],
+      "columns": [
+        {
+          "column": "audit_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 306,
+          "top_5": [
+            [
+              "audit_01",
+              1
+            ],
+            [
+              "audit_02",
+              1
+            ],
+            [
+              "audit_03",
+              1
+            ],
+            [
+              "audit_04",
+              1
+            ],
+            [
+              "audit_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "user_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 196,
+          "top_5": [
+            [
+              "user_10",
+              4
+            ],
+            [
+              "user_35",
+              4
+            ],
+            [
+              "user_11",
+              3
+            ],
+            [
+              "user_523",
+              2
+            ],
+            [
+              "user_528",
+              2
+            ]
+          ]
+        },
+        {
+          "column": "event_time",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 198,
+          "top_5": [
+            [
+              "2026-05-17T20:18:43Z",
+              3
+            ],
+            [
+              "2025-09-30T21:50:27Z",
+              2
+            ],
+            [
+              "2025-10-01T07:25:02Z",
+              2
+            ],
+            [
+              "2025-10-01T08:27:16Z",
+              2
+            ],
+            [
+              "2025-10-05T20:15:52Z",
+              2
+            ]
+          ]
+        },
+        {
+          "column": "field_name",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 3,
+          "top_5": [
+            [
+              "email",
+              107
+            ],
+            [
+              "email_hash",
+              107
+            ],
+            [
+              "phone",
+              92
+            ]
+          ]
+        },
+        {
+          "column": "old_value",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 306,
+          "top_5": [
+            [
+              "+33 6 24 34 80 16",
+              1
+            ],
+            [
+              "+81 90 6278 6936",
+              1
+            ],
+            [
+              "+46 70 144 08 06",
+              1
+            ],
+            [
+              "+44 7700 900880",
+              1
+            ],
+            [
+              "+27 72 156 3064",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "new_value",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 306,
+          "top_5": [
+            [
+              "+33 6 63 29 68 28",
+              1
+            ],
+            [
+              "+81 90 7870 0272",
+              1
+            ],
+            [
+              "+46 70 808 74 05",
+              1
+            ],
+            [
+              "+44 7700 900380",
+              1
+            ],
+            [
+              "+27 72 384 3167",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "audit_01",
+          "user_485",
+          "2024-12-14T16:31:44Z",
+          "phone",
+          "+33 6 24 34 80 16",
+          "+33 6 63 29 68 28"
+        ],
+        [
+          "audit_02",
+          "user_505",
+          "2024-12-25T00:51:04Z",
+          "phone",
+          "+81 90 6278 6936",
+          "+81 90 7870 0272"
+        ],
+        [
+          "audit_03",
+          "user_525",
+          "2025-01-04T00:11:24Z",
+          "phone",
+          "+46 70 144 08 06",
+          "+46 70 808 74 05"
+        ]
+      ]
+    },
+    "system_activity.csv": {
+      "file": "dataset\\system_activity.csv",
+      "total_rows": 4011,
+      "header": [
+        "activity_id",
+        "event_time",
+        "event_type",
+        "source_system",
+        "target_system",
+        "resource_id",
+        "reported_result",
+        "details"
+      ],
+      "columns": [
+        {
+          "column": "activity_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 4011,
+          "top_5": [
+            [
+              "activity_01",
+              1
+            ],
+            [
+              "activity_02",
+              1
+            ],
+            [
+              "activity_03",
+              1
+            ],
+            [
+              "activity_04",
+              1
+            ],
+            [
+              "activity_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "event_time",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 4011,
+          "top_5": [
+            [
+              "2026-01-04T14:56:29Z",
+              1
+            ],
+            [
+              "2026-01-04T16:08:26Z",
+              1
+            ],
+            [
+              "2026-01-04T17:14:03Z",
+              1
+            ],
+            [
+              "2026-01-04T18:36:21Z",
+              1
+            ],
+            [
+              "2026-01-04T18:36:36Z",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "event_type",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 17,
+          "top_5": [
+            [
+              "DELETE_RECORD",
+              890
+            ],
+            [
+              "UPDATE_RECORD",
+              672
+            ],
+            [
+              "SYNC_RECORD",
+              447
+            ],
+            [
+              "INDEX_RECORD",
+              400
+            ],
+            [
+              "SEND_EMAIL",
+              368
+            ]
+          ]
+        },
+        {
+          "column": "source_system",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 11,
+          "top_5": [
+            [
+              "deletion_worker",
+              1466
+            ],
+            [
+              "account_service",
+              1100
+            ],
+            [
+              "profile_service",
+              440
+            ],
+            [
+              "notification_service",
+              368
+            ],
+            [
+              "support_platform",
+              232
+            ]
+          ]
+        },
+        {
+          "column": "target_system",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 19,
+          "top_5": [
+            [
+              "account_service",
+              980
+            ],
+            [
+              "search_service",
+              954
+            ],
+            [
+              "analytics_platform",
+              566
+            ],
+            [
+              "email_delivery_service",
+              368
+            ],
+            [
+              "cache_service",
+              284
+            ]
+          ]
+        },
+        {
+          "column": "resource_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 3948,
+          "top_5": [
+            [
+              "account_1334",
+              2
+            ],
+            [
+              "account_634",
+              2
+            ],
+            [
+              "account_4974",
+              2
+            ],
+            [
+              "account_3626",
+              2
+            ],
+            [
+              "account_2424",
+              2
+            ]
+          ]
+        },
+        {
+          "column": "reported_result",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 3,
+          "top_5": [
+            [
+              "SUCCESS",
+              2914
+            ],
+            [
+              "FAILED",
+              721
+            ],
+            [
+              "PARTIAL",
+              376
+            ]
+          ]
+        },
+        {
+          "column": "details",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 4011,
+          "top_5": [
+            [
+              "Customer search-index refresh processed search_9729.",
+              1
+            ],
+            [
+              "Customer search-index refresh processed search_6919.",
+              1
+            ],
+            [
+              "Customer search-index refresh processed search_4613.",
+              1
+            ],
+            [
+              "Support-case index update processed support_4185.",
+              1
+            ],
+            [
+              "Profile preference update processed account_2689.",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "activity_01",
+          "2026-01-04T14:56:29Z",
+          "INDEX_RECORD",
+          "account_service",
+          "search_service",
+          "search_9729",
+          "SUCCESS",
+          "Customer search-index refresh processed search_9729."
+        ],
+        [
+          "activity_02",
+          "2026-01-04T16:08:26Z",
+          "INDEX_RECORD",
+          "account_service",
+          "search_service",
+          "search_6919",
+          "SUCCESS",
+          "Customer search-index refresh processed search_6919."
+        ],
+        [
+          "activity_03",
+          "2026-01-04T17:14:03Z",
+          "INDEX_RECORD",
+          "account_service",
+          "search_service",
+          "search_4613",
+          "SUCCESS",
+          "Customer search-index refresh processed search_4613."
+        ]
+      ]
+    },
+    "deletion_rules.csv": {
+      "file": "dataset\\deletion_rules.csv",
+      "total_rows": 15,
+      "header": [
+        "rule_id",
+        "data_category",
+        "condition",
+        "required_action"
+      ],
+      "columns": [
+        {
+          "column": "rule_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 15,
+          "top_5": [
+            [
+              "rule_01",
+              1
+            ],
+            [
+              "rule_02",
+              1
+            ],
+            [
+              "rule_03",
+              1
+            ],
+            [
+              "rule_04",
+              1
+            ],
+            [
+              "rule_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "data_category",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 15,
+          "top_5": [
+            [
+              "USER_PROFILE",
+              1
+            ],
+            [
+              "SECONDARY_IDENTIFIER",
+              1
+            ],
+            [
+              "SEARCH_INDEX_ENTRY",
+              1
+            ],
+            [
+              "CACHE_ENTRY",
+              1
+            ],
+            [
+              "SUPPORT_MESSAGE",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "condition",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 9,
+          "top_5": [
+            [
+              "Always",
+              6
+            ],
+            [
+              "Record is still attributable to a user",
+              2
+            ],
+            [
+              "Conversation contains shared customer, agent, or order context that must be retained",
+              1
+            ],
+            [
+              "Attachment belongs only to the deletion subject",
+              1
+            ],
+            [
+              "Log contains a user email address",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "required_action",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 4,
+          "top_5": [
+            [
+              "DELETE",
+              7
+            ],
+            [
+              "REDACT",
+              3
+            ],
+            [
+              "RETAIN",
+              3
+            ],
+            [
+              "ANONYMIZE",
+              2
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "rule_01",
+          "USER_PROFILE",
+          "Always",
+          "DELETE"
+        ],
+        [
+          "rule_02",
+          "SECONDARY_IDENTIFIER",
+          "Always",
+          "DELETE"
+        ],
+        [
+          "rule_03",
+          "SEARCH_INDEX_ENTRY",
+          "Always",
+          "DELETE"
+        ]
+      ]
+    },
+    "evidence_files.csv": {
+      "file": "dataset\\evidence_files.csv",
+      "total_rows": 94,
+      "header": [
+        "file_id",
+        "file_path",
+        "origin",
+        "captured_at"
+      ],
+      "columns": [
+        {
+          "column": "file_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 94,
+          "top_5": [
+            [
+              "evidence_01",
+              1
+            ],
+            [
+              "evidence_02",
+              1
+            ],
+            [
+              "evidence_03",
+              1
+            ],
+            [
+              "evidence_04",
+              1
+            ],
+            [
+              "evidence_05",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "file_path",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 94,
+          "top_5": [
+            [
+              "evidence/logs/service_events_ap_south_20260915.log",
+              1
+            ],
+            [
+              "evidence/records/customer_data_snapshot_bundle_20260917.json",
+              1
+            ],
+            [
+              "evidence/records/customer_account_handover_20261001.txt",
+              1
+            ],
+            [
+              "evidence/images/account_admin_console_20260926.png",
+              1
+            ],
+            [
+              "evidence/databases/customer_data_read_replica_20260921.sql",
+              1
+            ]
+          ]
+        },
+        {
+          "column": "origin",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 30,
+          "top_5": [
+            [
+              "central_observability_export",
+              12
+            ],
+            [
+              "records_assurance_snapshot_bundle",
+              12
+            ],
+            [
+              "service_resource_export",
+              11
+            ],
+            [
+              "customer_data_inventory_capture",
+              11
+            ],
+            [
+              "service_readback_logs",
+              11
+            ]
+          ]
+        },
+        {
+          "column": "captured_at",
+          "dtype": "datetime_iso",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 93,
+          "top_5": [
+            [
+              "2026-10-01T12:00:00Z",
+              2
+            ],
+            [
+              "2026-09-15T11:59:39Z",
+              1
+            ],
+            [
+              "2026-09-17T12:00:00Z",
+              1
+            ],
+            [
+              "2026-09-26T11:00:00Z",
+              1
+            ],
+            [
+              "2026-09-21T10:00:00Z",
+              1
+            ]
+          ]
+        }
+      ],
+      "sample_rows": [
+        [
+          "evidence_01",
+          "evidence/logs/service_events_ap_south_20260915.log",
+          "central_observability_export",
+          "2026-09-15T11:59:39Z"
+        ],
+        [
+          "evidence_02",
+          "evidence/records/customer_data_snapshot_bundle_20260917.json",
+          "records_assurance_snapshot_bundle",
+          "2026-09-17T12:00:00Z"
+        ],
+        [
+          "evidence_03",
+          "evidence/records/customer_account_handover_20261001.txt",
+          "customer_account_service",
+          "2026-10-01T12:00:00Z"
+        ]
+      ]
+    },
+    "output.csv": {
+      "file": "dataset\\output.csv",
+      "total_rows": 0,
+      "header": [
+        "case_id",
+        "deletion_status",
+        "steps_json"
+      ],
+      "columns": [
+        {
+          "column": "case_id",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 0,
+          "top_5": []
+        },
+        {
+          "column": "deletion_status",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 0,
+          "top_5": []
+        },
+        {
+          "column": "steps_json",
+          "dtype": "string",
+          "null_count": 0,
+          "null_pct": 0.0,
+          "distinct_count": 0,
+          "top_5": []
+        }
+      ],
+      "sample_rows": []
+    }
+  },
+  "deletion_requests_profile": {
+    "total_cases": 518,
+    "status_distribution": {
+      "COMPLETE": 254,
+      "NOT_STARTED": 112,
+      "PARTIALLY_COMPLETE": 152
+    },
+    "requested_at_range": [
+      "2026-01-05T06:00:00Z",
+      "2026-09-24T08:00:00Z"
+    ],
+    "reported_at_range": [
+      "2026-01-06T06:00:00Z",
+      "2026-09-26T02:00:00Z"
+    ],
+    "audit_at_range": [
+      "2026-01-29T12:00:00Z",
+      "2026-10-01T12:00:00Z"
+    ],
+    "intent_distribution": {
+      "deletion": 263,
+      "unclassified": 212,
+      "multiple:deletion+correction": 26,
+      "correction": 11,
+      "marketing_opt_out": 1,
+      "export": 1,
+      "access": 2,
+      "multiple:deletion+marketing_opt_out": 1,
+      "multiple:deletion+access": 1
+    }
+  },
+  "hash_hypothesis": {
+    "total_users": 850,
+    "exact_sha256_lower_strip_matches": 850,
+    "exact_sha256_raw_matches": 850,
+    "match_pct_in_user_identities": 100.0,
+    "total_text_evidence_scanned": 79,
+    "evidence_files_containing_sha256": 25,
+    "total_sha256_occurrences_in_evidence": 417,
+    "sha256_occurrences_matching_user_identities": 58,
+    "evidence_files_with_user_hash_hits": 21,
+    "evidence_files_with_user_email_hits": 77,
+    "evidence_files_with_user_id_hits": 73
+  },
+  "sample_output_ordering": {
+    "total_sample_cases": 32,
+    "status_distribution": {
+      "COMPLETE": 10,
+      "INCOMPLETE": 22
+    },
+    "total_steps_checked": 193,
+    "violations_count": 0,
+    "violations": []
+  },
+  "evidence_timing": {
+    "total_evidence_files": 94,
+    "formats_distribution": {
+      ".log": 26,
+      ".json": 28,
+      ".txt": 1,
+      ".png": 11,
+      ".sql": 24,
+      ".pdf": 4
+    },
+    "origins_distribution": {
+      "central_observability_export": 12,
+      "records_assurance_snapshot_bundle": 12,
+      "customer_account_service": 1,
+      "account_admin_portal": 1,
+      "customer_data_read_replica_capture": 5,
+      "search_index_service": 1,
+      "search_index_admin": 1,
+      "integration_management_service": 1,
+      "integration_admin": 1,
+      "account_history_service": 1,
+      "analytics_platform": 2,
+      "export_service": 2,
+      "legal_retention_service": 1,
+      "support_platform": 3,
+      "customer_data_regional_replicas_capture": 3,
+      "backup_service": 1,
+      "customer_export_service": 1,
+      "security_service": 2,
+      "downstream_delivery_service": 1,
+      "identity_service": 1,
+      "customer_data_reporting_replica_capture": 2,
+      "object_storage": 1,
+      "security_audit_service": 1,
+      "customer_data_failover_replica_capture": 1,
+      "customer_account_failover_replica_capture": 1,
+      "customer_search_primary_capture": 1,
+      "marketing_platform": 1,
+      "service_resource_export": 11,
+      "customer_data_inventory_capture": 11,
+      "service_readback_logs": 11
+    },
+    "captured_at_range": [
+      "2026-01-29T11:44:59Z",
+      "2026-10-01T12:00:00Z"
+    ],
+    "cases_with_evidence_after_audit_at": 511,
+    "total_cases": 518,
+    "min_future_evidence_per_case": 2,
+    "max_future_evidence_per_case": 93,
+    "avg_future_evidence_per_case": 54.56
+  }
+}
