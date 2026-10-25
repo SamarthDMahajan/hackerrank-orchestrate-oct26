@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_60",
+  "file_path": "evidence/images/marketing_profile_console.png",
+  "source_sha256": "51fa0e6a38f8fa3629ba1b0d0b90b4ed139715956b97bfd09a6f1a6232c15df5",
+  "captured_at": "2026-09-16T07:20:00Z",
+  "extraction_tool": "antigravity_vision_inspector",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_pixel_verified_against_source",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1500,
+    "height": 920
+  },
+  "page_count": null,
+  "coverage": "100% of visible audience operations profile console, attributes, and activity timeline",
+  "literal_transcription": "Northstar Shop / Audience Operations / Audience Operations\nSoo-jin Park Live marketing_001 · sj.park@naver.com · +82 10-5837-9451\nMarket South Korea Language Korean Email opt-in Yes SMS opt-in No Last refreshed 15 Sep 2026 23:40 UTC\nProfile activity: 23:40 Product-category update Desk accessories · Drinkware; 23:38 Campaign eligibility check Autumn offers · Eligible; 23:35 Profile refresh Live profile fields updated; 23:32 Audience evaluation Returning customers — East Asia\nAudience membership: Audience Returning customers — East Asia Segments Repeat customer · Home & lifestyle · Mobile shopper Preferred categories Desk accessories · Drinkware Last campaign Autumn offers Open rate 32.4% Click rate 6.8%",
+  "observed_records": [
+    {
+      "locator": "audience_profile_header",
+      "system_id": "marketing_platform",
+      "resource_id": "marketing_001",
+      "visible_identifiers": [
+        "sj.park@naver.com",
+        "+82 10-5837-9451",
+        "Soo-jin Park",
+        "kwame-mensah@proton.me",
+        "user_09"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-09-15T23:40:00Z",
+      "raw_excerpt": "Soo-jin Park Live marketing_001 · sj.park@naver.com · +82 10-5837-9451 Market South Korea Language Korean Email opt-in Yes SMS opt-in No Last refreshed 15 Sep 2026 23:40 UTC",
+      "physical_copy_scope": "Audience Operations / Northstar Shop",
+      "notes": "Catalog association to user_09 established in system_activity.csv activity_4008."
+    }
+  ]
+}

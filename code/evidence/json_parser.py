@@ -81,12 +81,12 @@ def parse_json(file_path: str, file_id: str, captured_at: str, identity: Identit
                 ))
             elif res_id and (candidate_resources and res_id in candidate_resources):
                 has_pii = bool(prof.get("email") or prof.get("phone") or prof.get("email_hash") or prof.get("customer_reference"))
-                state = StateSignal.PRESENT if has_pii else StateSignal.ANONYMIZED
-                observations.append(ResourceObservation(
-                    file_id=file_id, captured_at=captured_at, system_id="analytics_platform",
-                    resource_id=res_id, identifier_matched=identity.user_id, state_signal=state,
-                    raw_excerpt=json.dumps(prof)[:300], line_ref="profiles"
-                ))
+                if not has_pii:
+                    observations.append(ResourceObservation(
+                        file_id=file_id, captured_at=captured_at, system_id="analytics_platform",
+                        resource_id=res_id, identifier_matched=identity.user_id, state_signal=StateSignal.ANONYMIZED,
+                        raw_excerpt=json.dumps(prof)[:300], line_ref="profiles"
+                    ))
 
         # backup_service
         bak = se.get("backup_service", {})
@@ -225,20 +225,43 @@ def parse_json(file_path: str, file_id: str, captured_at: str, identity: Identit
                         raw_excerpt=json.dumps(rec)[:300], line_ref=collection
                     ))
 
-    # 3. Structure: records list (e.g. customer_analytics_report_*.json, customer_export_jobs_*.json)
+    # 3. Structure: records list (e.g. customer_analytics_report_*.json, customer_export_jobs_*.json, connector_configurations_*.json, customer_export_manifest_*.json)
     if "records" in data and isinstance(data["records"], list):
         source = data.get("source", "")
         collection = data.get("collection", "")
         for rec in data["records"]:
             res_id = rec.get("resource_id", "")
+            rec_sys = rec.get("system")
+            rec_res = rec.get("result")
             matched = (_matches_identity(rec.get("user_id"), identity) or
                        _matches_identity(rec.get("customer_reference"), identity) or
                        _matches_identity(rec.get("owner_email"), identity) or
                        _matches_identity(rec.get("email"), identity) or
                        _matches_identity(rec.get("phone"), identity) or
-                       _matches_identity(rec.get("email_hash"), identity))
+                       _matches_identity(rec.get("email_hash"), identity) or
+                       _matches_identity(rec.get("subject_reference"), identity))
             if matched:
-                if "analytics" in collection or "analytics" in source:
+                if rec_sys:
+                    system_id = rec_sys
+                    if rec_res:
+                        res_up = str(rec_res).upper()
+                        if res_up in ("NOT_FOUND", "ABSENT"):
+                            state = StateSignal.ABSENT
+                        elif res_up in ("FOUND", "IDENTIFIABLE", "PRESENT"):
+                            state = StateSignal.PRESENT
+                        elif res_up == "ANONYMIZED":
+                            state = StateSignal.ANONYMIZED
+                        elif res_up in ("ACTIVE", "ENABLED"):
+                            state = StateSignal.ACTIVE
+                        elif res_up == "DISABLED":
+                            state = StateSignal.DISABLED
+                        elif res_up == "BLOCKED":
+                            state = StateSignal.BLOCKED
+                        else:
+                            state = StateSignal.PRESENT
+                    else:
+                        state = StateSignal.PRESENT
+                elif "analytics" in collection or "analytics" in source:
                     has_pii = bool(rec.get("email") or rec.get("phone") or rec.get("email_hash"))
                     state = StateSignal.PRESENT if has_pii else StateSignal.ANONYMIZED
                     system_id = "analytics_platform"
@@ -256,19 +279,27 @@ def parse_json(file_path: str, file_id: str, captured_at: str, identity: Identit
                     state = StateSignal.PRESENT
                     system_id = source or "platform_service"
 
+                rec_time = (rec.get("recorded_at") or rec.get("observed_at") or
+                            rec.get("event_time") or rec.get("created_at") or
+                            rec.get("timestamp") or rec.get("updated_at"))
                 observations.append(ResourceObservation(
                     file_id=file_id, captured_at=captured_at, system_id=system_id,
                     resource_id=res_id, identifier_matched=matched, state_signal=state,
-                    raw_excerpt=json.dumps(rec)[:300], line_ref=collection or "records"
+                    raw_excerpt=json.dumps(rec)[:300], line_ref=collection or "records",
+                    observed_timestamp=rec_time
                 ))
             elif res_id and (candidate_resources and res_id in candidate_resources):
                 if "analytics" in collection or "analytics" in source:
                     has_pii = bool(rec.get("email") or rec.get("phone") or rec.get("email_hash") or rec.get("user_id"))
                     state = StateSignal.PRESENT if has_pii else StateSignal.ANONYMIZED
+                    rec_time = (rec.get("recorded_at") or rec.get("observed_at") or
+                                rec.get("event_time") or rec.get("created_at") or
+                                rec.get("timestamp") or rec.get("updated_at"))
                     observations.append(ResourceObservation(
                         file_id=file_id, captured_at=captured_at, system_id="analytics_platform",
                         resource_id=res_id, identifier_matched=identity.user_id, state_signal=state,
-                        raw_excerpt=json.dumps(rec)[:300], line_ref=collection or "records"
+                        raw_excerpt=json.dumps(rec)[:300], line_ref=collection or "records",
+                        observed_timestamp=rec_time
                     ))
 
     return observations

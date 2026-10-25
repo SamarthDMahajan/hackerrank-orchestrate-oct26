@@ -23,6 +23,7 @@ import os
 import sys
 import csv
 import json
+import re
 import argparse
 from datetime import datetime
 from collections import defaultdict
@@ -150,7 +151,11 @@ def validate_file(output_path, requests_path):
             if case_id != expected_case_ids[row_idx]:
                 errors.append(f"Line {line_num}: Expected case_id '{expected_case_ids[row_idx]}', found '{case_id}'")
 
-        if prev_case_id is not None and case_id < prev_case_id:
+        def _case_key(cid):
+            m = re.match(r"case_(\d+)", cid)
+            return int(m.group(1)) if m else cid
+
+        if prev_case_id is not None and _case_key(case_id) < _case_key(prev_case_id):
             errors.append(f"Line {line_num}: Case IDs not sorted ascending ('{case_id}' after '{prev_case_id}')")
         prev_case_id = case_id
 

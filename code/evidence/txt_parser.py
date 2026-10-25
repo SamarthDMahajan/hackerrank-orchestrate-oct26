@@ -12,6 +12,8 @@ STATUS_MAP = {
     "ABSENT": StateSignal.ABSENT,
     "PRESENT": StateSignal.PRESENT,
     "EXPOSED_PII": StateSignal.PRESENT,
+    "FOUND": StateSignal.PRESENT,
+    "IDENTIFIABLE": StateSignal.PRESENT,
     "ACTIVE": StateSignal.ACTIVE,
     "DISABLED": StateSignal.DISABLED,
     "BLOCKED": StateSignal.BLOCKED,

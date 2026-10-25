@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_37",
+  "file_path": "evidence/images/security_audit_explorer_20260905.png",
+  "source_sha256": "ca59f693f4e7002466b3fdeaf1bb6763618770963dd811b60003772d07b4b03b",
+  "captured_at": "2026-09-05T07:00:00Z",
+  "extraction_tool": "antigravity_vision_inspector",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_pixel_verified_against_source",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1800,
+    "height": 1100
+  },
+  "page_count": null,
+  "coverage": "100% of visible security audit event list, query filter, and raw event panel",
+  "literal_transcription": "Northstar Shop / Sentinel / Account events 6 signed events Subject filter: user_03 · 18-26 Aug 2026 UTC Events 6 Categories 5 Integrity failures 0 Partition 2026-Q3\nEvents (6): 1 25 Aug 04:03 Account closure recorded Account lifecycle user_03 Automated workflow Valid audit_record_003; 2 25 Aug 03:21 Session revoked Session management user_03 Security system Valid audit_record_002; 3 24 Aug 16:14 Recovery challenge completed Authentication user_03 User (self) Valid audit_record_001; 4 22 Aug 11:27 Email change confirmed Profile update user_03 User (self) Valid audit_record_006; 5 20 Aug 09:42 Login from new device Authentication user_03 User (self) Valid audit_record_005; 6 18 Aug 14:05 Password changed Authentication user_03 User (self) Valid audit_record_004\naudit_record_003 · Raw event: event_type account_closure_recorded subject user_03 actor automated account workflow recorded_at 2026-08-25T04:03:00Z fingerprint 8f0c...31ad signature Valid journal 2026-Q3",
+  "observed_records": [
+    {
+      "locator": "account_events_row_1",
+      "system_id": "security_service",
+      "resource_id": "audit_record_003",
+      "visible_identifiers": [
+        "user_03"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-08-25T04:03:00Z",
+      "raw_excerpt": "25 Aug 04:03 Account closure recorded Account lifecycle user_03 Automated workflow Valid audit_record_003 recorded_at 2026-08-25T04:03:00Z Partition 2026-Q3",
+      "physical_copy_scope": "Sentinel / Account events",
+      "notes": null
+    }
+  ]
+}

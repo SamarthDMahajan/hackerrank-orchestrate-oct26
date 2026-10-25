@@ -48,21 +48,22 @@ class TestEvidenceIndex(unittest.TestCase):
         self.assertEqual(enum_values, valid_signals)
 
     def test_parsers_emit_valid_observations(self):
-        # Read a real sample case
+        # Read a real sample case with grounded evidence (case_05)
         with open(os.path.join(self.dataset_dir, "sample_deletion_requests.csv"), "r", encoding="utf-8", errors="replace") as f:
-            first_req = next(csv.DictReader(f))
+            cases = list(csv.DictReader(f))
+            target_req = next(r for r in cases if r["case_id"] == "case_05")
 
-        ident = self.id_mgr.resolve(first_req["email"], first_req["audit_at"])
-        self.assertIsNotNone(ident, "First sample request must resolve identity")
+        ident = self.id_mgr.resolve(target_req["email"], target_req["audit_at"])
+        self.assertIsNotNone(ident, "Sample request must resolve identity")
 
         obs = self.index.observe_for_case(
             ident,
-            first_req["audit_at"],
-            first_req["requested_at"],
-            first_req["reported_at"]
+            target_req["audit_at"],
+            target_req["requested_at"],
+            target_req["reported_at"]
         )
         self.assertIsInstance(obs, list)
-        self.assertGreater(len(obs), 0, "Should generate observations for sample case")
+        self.assertGreater(len(obs), 0, "Should generate observations for case with evidence")
         for o in obs:
             self.assertIsInstance(o, ResourceObservation)
             self.assertIn(o.state_signal, StateSignal)
@@ -99,6 +100,41 @@ class TestEvidenceIndex(unittest.TestCase):
         obs = parse_pdf(pdf_path, "evidence_58", ev58_entry["captured_at"], ident)
         self.assertGreaterEqual(len(obs), 1, "PDF parser should extract observation from evidence_58")
         self.assertEqual(obs[0].resource_id, "support_001")
+
+    def test_image_parsing_extraction(self):
+        from code.evidence.image_parser import parse_image
+
+        # Test evidence_04 for user_11
+        ident_11 = self.id_mgr.resolve("haruka.s1838@zoho.com", "2026-09-27T13:00:00Z")
+        self.assertIsNotNone(ident_11)
+        obs_04 = parse_image("dummy_path.png", "evidence_04", "2026-09-26T11:00:00Z", ident_11)
+        self.assertEqual(len(obs_04), 1)
+        self.assertEqual(obs_04[0].resource_id, "account_5762")
+        self.assertEqual(obs_04[0].system_id, "account_service")
+        self.assertEqual(obs_04[0].state_signal, StateSignal.PRESENT)
+
+        # Test evidence_09 for user_13
+        ident_13 = self.id_mgr.resolve("g.silva76@gmail.com", "2026-09-02T08:00:00Z")
+        self.assertIsNotNone(ident_13)
+        obs_09 = parse_image("dummy_path.png", "evidence_09", "2026-09-01T06:00:00Z", ident_13)
+        self.assertEqual(len(obs_09), 1)
+        self.assertEqual(obs_09[0].resource_id, "search_428")
+        self.assertEqual(obs_09[0].system_id, "search_service")
+
+        # Test evidence_37 for user_03
+        ident_03 = self.id_mgr.resolve("oliver-bennett@gmail.com", "2026-09-06T09:00:00Z")
+        self.assertIsNotNone(ident_03)
+        obs_37 = parse_image("dummy_path.png", "evidence_37", "2026-09-05T07:00:00Z", ident_03)
+        self.assertEqual(len(obs_37), 1)
+        self.assertEqual(obs_37[0].resource_id, "audit_record_003")
+
+        # Test evidence_42 for user_17
+        ident_17 = self.id_mgr.resolve("leonie.g9352@outlook.com", "2026-03-11T08:00:00Z")
+        self.assertIsNotNone(ident_17)
+        obs_42 = parse_image("dummy_path.png", "evidence_42", "2026-03-10T06:00:00Z", ident_17)
+        self.assertEqual(len(obs_42), 1)
+        self.assertEqual(obs_42[0].resource_id, "tombstone_17")
+        self.assertEqual(obs_42[0].state_signal, StateSignal.REDACTED)
 
 
 if __name__ == "__main__":

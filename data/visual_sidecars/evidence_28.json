@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_28",
+  "file_path": "evidence/images/support_ticket_console_20260524.png",
+  "source_sha256": "542b7aec17e6b2f38827896e7eb52c70e4bfaaca22433621be1f80f54884e944",
+  "captured_at": "2026-05-24T07:00:00Z",
+  "extraction_tool": "antigravity_vision_inspector",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_pixel_verified_against_source",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1800,
+    "height": 1200
+  },
+  "page_count": null,
+  "coverage": "100% of visible support ticket conversation, order reference, and timeline",
+  "literal_transcription": "Northstar Shop / Helpline Console / Inbox\nCS-5034 · Where is my delivery? SLA 01:42 support_1034 · Kofi Agyeman · Normal priority\nCustomer Kofi Agyeman Email kagyeman8947@fastmail.com Assigned Maya Chen Tags Delivery · Tracking · Order update\nConversation: 09:12 Kofi Agyeman Could you let me know where my order is and when it is expected to arrive?; 09:13 Northstar Bot We received your message and are checking the order details.; 09:28 Maya Chen The parcel reached the regional hub and is on track for delivery on 26 May.; 09:35 Kofi Agyeman Thanks for the update.\nOrder ORD-20265034 Product Running shoes Status In transit Carrier SwiftShip Tracking SWF-884103 Expected 26 May 2026 Assigned agent Maya Chen",
+  "observed_records": [
+    {
+      "locator": "ticket_header",
+      "system_id": "support_platform",
+      "resource_id": "support_1034",
+      "visible_identifiers": [
+        "kagyeman8947@fastmail.com",
+        "Kofi Agyeman",
+        "CS-5034",
+        "ORD-20265034"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-24T09:35:00Z",
+      "raw_excerpt": "CS-5034 · Where is my delivery? support_1034 · Kofi Agyeman Customer Kofi Agyeman Email kagyeman8947@fastmail.com Order ORD-20265034",
+      "physical_copy_scope": "Helpline Console / Inbox",
+      "notes": null
+    }
+  ]
+}

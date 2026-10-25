@@ -4,6 +4,7 @@ Ghost Data Still Exists.
 """
 
 from __future__ import annotations
+from typing import Optional
 from enum import Enum
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -30,3 +31,5 @@ class ResourceObservation(BaseModel):
     state_signal: StateSignal
     raw_excerpt: str
     line_ref: str
+    physical_copy_scope: Optional[str] = None
+    observed_timestamp: Optional[str] = None

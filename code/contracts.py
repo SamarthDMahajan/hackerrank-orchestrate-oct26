@@ -6,7 +6,7 @@ Built with Pydantic v2, extra="forbid", and strict type definitions.
 from __future__ import annotations
 from enum import Enum
 from datetime import datetime
-from typing import Literal, List, Optional, Union
+from typing import Literal, List, Optional, Union, Dict, Any
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
@@ -123,6 +123,8 @@ StepItem = Union[Finding, Remediation, Verification]
 
 class Step(ContractBaseModel):
     """Generic Step model matching output JSON schema."""
+    model_config = ConfigDict(extra="forbid", strict=False)
+
     step_no: int = Field(ge=1)
     phase: Phase
     system_id: str
@@ -172,3 +174,40 @@ class OutputRow(ContractBaseModel):
             if Phase.FINDING not in phases_present:
                 raise ValueError("INCOMPLETE status must contain FINDING steps")
         return self
+
+
+class VerdictCertainty(str, Enum):
+    CONFIRMED = "CONFIRMED"
+    BLOCKED_EMPTY_DISCOVERY = "BLOCKED_EMPTY_DISCOVERY"
+    BLOCKED_ASSOCIATION_GAP = "BLOCKED_ASSOCIATION_GAP"
+    BLOCKED_UNRESOLVED_SCOPE = "BLOCKED_UNRESOLVED_SCOPE"
+    BLOCKED_UNRESOLVED_CONFLICT = "BLOCKED_UNRESOLVED_CONFLICT"
+    BLOCKED_UNKNOWN_POLICY_CONDITION = "BLOCKED_UNKNOWN_POLICY_CONDITION"
+
+
+class PlanCompleteness(str, Enum):
+    COMPLETE = "COMPLETE"
+    INCOMPLETE_SCOPE = "INCOMPLETE_SCOPE"
+    NOT_APPLICABLE = "NOT_APPLICABLE"
+
+
+class CaseEvaluationResult(ContractBaseModel):
+    case_id: str
+    is_deletion: bool
+    status: Optional[DeletionStatus] = None
+    verdict_certainty: VerdictCertainty
+    plan_completeness: PlanCompleteness
+    steps: List[Step] = Field(default_factory=list)
+    diagnostics: List[str] = Field(default_factory=list)
+    provenance: Dict[str, Any] = Field(default_factory=dict)
+
+    def is_blocked(self) -> bool:
+        return self.verdict_certainty != VerdictCertainty.CONFIRMED or self.status is None
+
+    def __iter__(self):
+        st_val = self.status.value if self.status else ""
+        st_steps = [s.model_dump() if hasattr(s, "model_dump") else s for s in self.steps]
+        return iter((st_val, st_steps))
+
+    def __getitem__(self, idx):
+        return tuple(self)[idx]

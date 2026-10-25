@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_27",
+  "file_path": "evidence/documents/legal_retention_register_20260529.pdf",
+  "source_sha256": "0919c931c018565e82502050ee1026918c1baf210c8ba23d2386415dd46efb10",
+  "captured_at": "2026-05-29T08:00:00Z",
+  "extraction_tool": "antigravity_pdf_stream_decoder",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_decoded_stream_verified_against_source",
+  "media_type": "application/pdf",
+  "dimensions": null,
+  "page_count": 2,
+  "coverage": "100% of decoded PDF text streams across all 2 pages",
+  "literal_transcription": "DISPUTED ORDERS AND TAX RECORDS REGISTER Finance Operations | May 2026 Register month May 2026 owner Finance Records classification Internal generated 29 May 2026 08:00 UTC\nPage 2: Disputed order entries:\n1 ORD-20264118 | user_08 | Card dispute | 04 May 2026 | USD 184.20 | Retain until 04 May 2033 | AR\n2 ORD-20264207 | user_12 | Tax correction | 09 May 2026 | EUR 72.40 | Retain until 09 May 2033 | ML\n3 ORD-20264319 | user_17 | Chargeback | 14 May 2026 | GBP 219.00 | Retain until 14 May 2033 | SK\n4 ORD-20264402 | user_21 | Invoice inquiry | 18 May 2026 | CAD 96.55 | Retain until 18 May 2033 | AR\n5 ORD-20264511 | user_24 | Card dispute | 23 May 2026 | AUD 311.80 | Retain until 23 May 2033 | ML\n6 ORD-20264600 | user_29 | Tax record | 28 May 2026 | USD 48.75 | Retain until 28 May 2033 | SK",
+  "observed_records": [
+    {
+      "locator": "disputed_orders_row_1",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264118",
+      "visible_identifiers": [
+        "user_08"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-04T00:00:00Z",
+      "raw_excerpt": "ORD-20264118 | user_08 | Card dispute | 04 May 2026 | USD 184.20 | Retain until 04 May 2033 | AR",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    },
+    {
+      "locator": "disputed_orders_row_2",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264207",
+      "visible_identifiers": [
+        "user_12"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-09T00:00:00Z",
+      "raw_excerpt": "ORD-20264207 | user_12 | Tax correction | 09 May 2026 | EUR 72.40 | Retain until 09 May 2033 | ML",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    },
+    {
+      "locator": "disputed_orders_row_3",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264319",
+      "visible_identifiers": [
+        "user_17"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-14T00:00:00Z",
+      "raw_excerpt": "ORD-20264319 | user_17 | Chargeback | 14 May 2026 | GBP 219.00 | Retain until 14 May 2033 | SK",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    },
+    {
+      "locator": "disputed_orders_row_4",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264402",
+      "visible_identifiers": [
+        "user_21"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-18T00:00:00Z",
+      "raw_excerpt": "ORD-20264402 | user_21 | Invoice inquiry | 18 May 2026 | CAD 96.55 | Retain until 18 May 2033 | AR",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    },
+    {
+      "locator": "disputed_orders_row_5",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264511",
+      "visible_identifiers": [
+        "user_24"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-23T00:00:00Z",
+      "raw_excerpt": "ORD-20264511 | user_24 | Card dispute | 23 May 2026 | AUD 311.80 | Retain until 23 May 2033 | ML",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    },
+    {
+      "locator": "disputed_orders_row_6",
+      "system_id": "finance_service",
+      "resource_id": "ORD-20264600",
+      "visible_identifiers": [
+        "user_29"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-05-28T00:00:00Z",
+      "raw_excerpt": "ORD-20264600 | user_29 | Tax record | 28 May 2026 | USD 48.75 | Retain until 28 May 2033 | SK",
+      "physical_copy_scope": "DISPUTED ORDERS AND TAX RECORDS REGISTER / May 2026",
+      "notes": null
+    }
+  ]
+}

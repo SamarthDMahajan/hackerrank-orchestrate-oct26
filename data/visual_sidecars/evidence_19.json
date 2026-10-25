@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_19",
+  "file_path": "evidence/images/analytics_profile_view_20260713.png",
+  "source_sha256": "4e4cb259bc2010b622b0c53fe5872258f994fefc23452a83bb27473758693484",
+  "captured_at": "2026-07-13T10:00:00Z",
+  "extraction_tool": "antigravity_vision_inspector",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_pixel_verified_against_source",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1800,
+    "height": 1150
+  },
+  "page_count": null,
+  "coverage": "100% of visible profile view, event timeline table, and attribute panel",
+  "literal_transcription": "Northstar Shop / Pulse Analytics / Users\nOmar Darwish Last 90 days user_20 · analytics_7438 · darwish.omar@icloud.com\nSessions 12 Products viewed 19 Completed orders 2 Revenue USD 167.42 Mobile/Desktop 67%/33% Acquisition Organic search\nEvent timeline: 14:22 Order completed Ceramic coffee set USD 84.21 Mobile; 14:20 Checkout started USD 84.21; 14:17 Product viewed; 14:16 Added to cart USD 42.00; 14:12 Product viewed Stoneware mug USD 18.00 Desktop\nProfile attributes: Market AE Audience Returning shopper Interest Coffee & dining Last activity 13 Jul 2026 14:22 UTC First seen 21 Apr 2026 09:14 UTC",
+  "observed_records": [
+    {
+      "locator": "user_profile_header",
+      "system_id": "analytics_platform",
+      "resource_id": "analytics_7438",
+      "visible_identifiers": [
+        "user_20",
+        "darwish.omar@icloud.com",
+        "Omar Darwish"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-07-13T14:22:00Z",
+      "raw_excerpt": "Omar Darwish Last 90 days user_20 · analytics_7438 · darwish.omar@icloud.com Sessions 12 Products viewed 19 Revenue USD 167.42 Market AE Last activity 13 Jul 2026 14:22 UTC",
+      "physical_copy_scope": "Pulse Analytics / Users",
+      "notes": null
+    }
+  ]
+}

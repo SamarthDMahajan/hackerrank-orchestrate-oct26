@@ -3,3 +3,12 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+scratch/
+diagnostic_preservation/
+review_export/
+sample_pred.csv
+test_sample_pred.csv
+test_enhanced_sample_pred.csv
+output_sample_test.csv
+.pytest_cache/
+.mypy_cache/

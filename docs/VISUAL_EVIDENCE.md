@@ -26,51 +26,36 @@ This document provides a comprehensive audit of all 15 non-text evidence files i
 
 ---
 
-## 2. Resources ONLY Observable via Image or PDF
+## 2. True Image-Only Resources (Zero Text/PDF Presence)
 
-The following resources have no corresponding records in any `.json`, `.sql`, `.log`, or `.txt` evidence files:
+The following resources appear EXCLUSIVELY in PNG screenshot evidence, with zero representation in any `.json`, `.sql`, `.log`, `.txt`, or parsed digital PDF document:
 
 1. **`object_19` (`delivery_confirmation_19.pdf`)**
-   - **File**: `evidence_46` (`evidence/images/object_storage_browser_20260213.png`)
+   - **Exact File**: `evidence_46` (`evidence/images/object_storage_browser_20260213.png`)
    - **System**: `object_storage`
+   - **Location**: Storage browser table row listing object name `delivery_confirmation_19.pdf`, resource `object_19`, bucket `customer-attachments`.
    - **Subject**: `user_07` (`priya.raman@gmail.com`)
-   - **Status**: Attachment file stored in bucket. Attributed in `system_activity.csv` (`activity_4007`).
+   - **Grep Verification**: Absent from all text/json/sql/log/txt and parsed-PDF output across `dataset/evidence/`. Referenced only in `system_activity.csv` (`activity_4007`).
 
 2. **`marketing_001`**
-   - **File**: `evidence_60` (`evidence/images/marketing_profile_console.png`)
+   - **Exact File**: `evidence_60` (`evidence/images/marketing_profile_console.png`)
    - **System**: `marketing_platform`
+   - **Location**: Marketing audience table row showing profile `marketing_001`, subscriber `kwame-mensah@proton.me`, status `ACTIVE`.
    - **Subject**: `user_09` (`kwame-mensah@proton.me`)
-   - **Status**: Marketing campaign subscriber profile. Attributed in `system_activity.csv` (`activity_4008`).
+   - **Grep Verification**: Absent from all text/json/sql/log/txt and parsed-PDF output across `dataset/evidence/`. Referenced only in `system_activity.csv` (`activity_4008`).
 
 3. **`tombstone_17`**
-   - **File**: `evidence_42` (`evidence/images/deleted_account_reference_20260310.png`)
+   - **Exact File**: `evidence_42` (`evidence/images/deleted_account_reference_20260310.png`)
    - **System**: `identity_service`
+   - **Location**: Deleted customer reference table row showing tombstone reference `tombstone_17`, user ID `user_17`, timestamp `2026-03-10`.
    - **Subject**: `user_17` (`leonie.g9352@outlook.com`)
-   - **Status**: Account tombstone table console screenshot. Attributed in `system_activity.csv` (`activity_4011`).
+   - **Grep Verification**: Absent from all text/json/sql/log/txt and parsed-PDF output across `dataset/evidence/`. Referenced only in `system_activity.csv` (`activity_4011`).
 
-4. **`audit_record_003`**
-   - **Files**: `evidence_37` (`evidence/images/security_audit_explorer_20260905.png`) and `evidence_55` (`evidence/documents/security_retention_extract.pdf`)
-   - **System**: `security_service`
-   - **Subject**: `user_03` (`oliver-bennett@gmail.com`)
-   - **Status**: Compliance journal signed extract. Retained until 2027-08-25 under RETAIN policy. Attributed in `system_activity.csv` (`activity_4010`).
-
-5. **`support_001` (Ticket `CS-4827`)**
-   - **File**: `evidence_58` (`evidence/documents/delivery_correction_attachment.pdf`)
-   - **System**: `support_platform`
-   - **Subject**: `user_07` (`priya.raman@gmail.com`)
-   - **Status**: Address correction customer attachment. Directly cited in `sample_output.csv` (`case_07`, Step 1: `VERIFY_RECORD_PRESENT`). Decoded via pure-Python PDF stream decompressor.
-
-6. **`export_1842` (Customer Statement `NST-2026-0718-1842`)**
-   - **File**: `evidence_18` (`evidence/documents/account_history_report_20260718.pdf`)
-   - **System**: `account_history_service` / `export_service`
-   - **Subject**: `user_18` (`ingrid.dahl@outlook.com`)
-   - **Status**: Monthly customer statement export with full order history, address, and masked credit card details. Attributed in `system_activity.csv` (`activity_4009`).
-
-7. **Disputed Orders and Tax Register (`ORD-20264118` to `ORD-20264600`)**
-   - **File**: `evidence_27` (`evidence/documents/legal_retention_register_20260529.pdf`)
-   - **System**: `legal_service`
-   - **Subjects**: `user_08`, `user_12`, `user_17`, `user_21`, `user_24`, `user_29`
-   - **Status**: Tax and chargeback dispute register retained for 7 years until May 2033 under legal retention rules.
+### Non-Image-Only Resources (Parsed via `pdf_parser`)
+- **`audit_record_003`**: Fully decoded from digital PDF stream in `evidence_55` (`evidence/documents/security_retention_extract.pdf`).
+- **`support_001`**: Fully decoded from digital PDF stream in `evidence_58` (`evidence/documents/delivery_correction_attachment.pdf`).
+- **`export_1842`**: Fully decoded from digital PDF stream in `evidence_18` (`evidence/documents/account_history_report_20260718.pdf`).
+- **Disputed Orders Register**: Fully decoded from digital PDF stream in `evidence_27` (`evidence/documents/legal_retention_register_20260529.pdf`).
 
 ---
 

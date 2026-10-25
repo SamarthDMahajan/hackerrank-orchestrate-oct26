@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_18",
+  "file_path": "evidence/documents/account_history_report_20260718.pdf",
+  "source_sha256": "abe1877efe69fb5617a79c0d22df9113372e1e6804f8986b0fd408563ecca448",
+  "captured_at": "2026-07-18T11:00:00Z",
+  "extraction_tool": "antigravity_pdf_stream_decoder",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_decoded_stream_verified_against_source",
+  "media_type": "application/pdf",
+  "dimensions": null,
+  "page_count": 2,
+  "coverage": "100% of decoded PDF text streams across all 2 pages",
+  "literal_transcription": "NORTHSTAR SHOP - CUSTOMER STATEMENT\nStatement NST-2026-0718-1842\nCustomer and order Record Customer Ingrid Dahl Detail user_18 Detail ingrid.dahl@outlook.com Detail statement NST-2026-0718-1842 Detail order ORD-20261260\nItem Smart desk lamp, SKU LAMP-SD-04, quantity 1, subtotal EUR 54.95, shipping EUR 4.99, tax\nPage 2: Delivery address 24 Fjordgata, 7010 Trondheim, Norway Timeline order placed, payment authorised, warehouse packed, carrier collected, delivered",
+  "observed_records": [
+    {
+      "locator": "page_1_customer_details",
+      "system_id": "export_service",
+      "resource_id": "export_1842",
+      "visible_identifiers": [
+        "user_18",
+        "ingrid.dahl@outlook.com",
+        "Ingrid Dahl",
+        "ORD-20261260",
+        "NST-2026-0718-1842"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-07-18T11:00:00Z",
+      "raw_excerpt": "Statement NST-2026-0718-1842 Customer Ingrid Dahl user_18 ingrid.dahl@outlook.com statement NST-2026-0718-1842 order ORD-20261260 24 Fjordgata, 7010 Trondheim, Norway",
+      "physical_copy_scope": "Customer Statement Document",
+      "notes": null
+    }
+  ]
+}

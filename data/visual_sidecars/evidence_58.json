@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_58",
+  "file_path": "evidence/documents/delivery_correction_attachment.pdf",
+  "source_sha256": "0c58960759d4821b030b467d6fe531e83e38e7f50b3de3389a735521d0001f18",
+  "captured_at": "2026-09-12T07:30:00Z",
+  "extraction_tool": "antigravity_pdf_stream_decoder",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_decoded_stream_verified_against_source",
+  "media_type": "application/pdf",
+  "dimensions": null,
+  "page_count": 2,
+  "coverage": "100% of decoded PDF text streams across all 2 pages",
+  "literal_transcription": "DELIVERY ADDRESS CORRECTION REQUEST Support reference CS-4827 / support_001\nCustomer request Record Northstar Shop Delivery Address Correction Request Detail reference CS-4827 / support_001 Detail received 18 Jun 2026 Detail Priya Raman Detail priya.raman@gmail.com Detail +91 98765 73142\nPage 2: Order and delivery details Record file delivery_address_correction.pdf Detail 312 KB Detail ticket CS-4827 Detail region ap-south Detail uploader customer captured 12 Sep 2026 07:30 UTC",
+  "observed_records": [
+    {
+      "locator": "customer_request_summary",
+      "system_id": "support_platform",
+      "resource_id": "support_001",
+      "visible_identifiers": [
+        "priya.raman@gmail.com",
+        "Priya Raman",
+        "+91 98765 73142",
+        "CS-4827"
+      ],
+      "state_signal": "PRESENT",
+      "observed_timestamp": "2026-06-18T00:00:00Z",
+      "raw_excerpt": "DELIVERY ADDRESS CORRECTION REQUEST Support reference CS-4827 / support_001 Customer Priya Raman priya.raman@gmail.com +91 98765 73142 received 18 Jun 2026 file delivery_address_correction.pdf 312 KB captured 12 Sep 2026 07:30 UTC",
+      "physical_copy_scope": "Northstar Shop Delivery Address Correction Request Attachment",
+      "notes": null
+    }
+  ]
+}

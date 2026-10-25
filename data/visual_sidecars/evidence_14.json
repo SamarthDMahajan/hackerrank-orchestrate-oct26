@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_id": "evidence_14",
+  "file_path": "evidence/images/connector_management_console_20260807.png",
+  "source_sha256": "e81fabc93ea1b5f4c918d934cdb2bea05d61737adfcc29f281494f5d8ec46355",
+  "captured_at": "2026-08-07T08:00:00Z",
+  "extraction_tool": "antigravity_vision_inspector",
+  "extraction_timestamp": "2026-10-25T07:20:00Z",
+  "review_status": "agent_pixel_verified_against_source",
+  "media_type": "image/png",
+  "dimensions": {
+    "width": 1800,
+    "height": 1150
+  },
+  "page_count": null,
+  "coverage": "100% of visible topology connections table and connector detail card",
+  "literal_transcription": "Northstar Shop / BridgeOps / Connections 12 connectors PRODUCTION · eu-west · 07 Aug 2026 08:00 UTC\nTopology: 1 data_flow_1121 customer_analytics_warehouse jain.aditi@gmail.com Continuous 1,284 07:59:42; 2 data_flow_9846 customer_analytics_warehouse lucia-torres@gmail.com Continuous 842 07:59:36; 3 Order notifications notification_service order events Continuous 650 07:59:28; 4 Delivery tracking logistics_warehouse shipment events Continuous 420 07:59:13\ndata_flow_1121 Status Healthy Owner Data Platform Destination customer_analytics_warehouse Selector jain.aditi@gmail.com Sync mode Continuous sync Last response 200 OK · 1.8 s",
+  "observed_records": [
+    {
+      "locator": "topology_row_1",
+      "system_id": "integration_service",
+      "resource_id": "data_flow_1121",
+      "visible_identifiers": [
+        "jain.aditi@gmail.com"
+      ],
+      "state_signal": "ACTIVE",
+      "observed_timestamp": "2026-08-07T07:59:42Z",
+      "raw_excerpt": "data_flow_1121 Destination customer_analytics_warehouse Selector jain.aditi@gmail.com Mode Continuous Events/hour 1,284 Last contact 07:59:42 Status Healthy Sync mode Continuous sync",
+      "physical_copy_scope": "PRODUCTION / eu-west",
+      "notes": null
+    },
+    {
+      "locator": "topology_row_2",
+      "system_id": "integration_service",
+      "resource_id": "data_flow_9846",
+      "visible_identifiers": [
+        "lucia-torres@gmail.com"
+      ],
+      "state_signal": "ACTIVE",
+      "observed_timestamp": "2026-08-07T07:59:36Z",
+      "raw_excerpt": "data_flow_9846 Destination customer_analytics_warehouse Selector lucia-torres@gmail.com Mode Continuous Events/hour 842 Last contact 07:59:36",
+      "physical_copy_scope": "PRODUCTION / eu-west",
+      "notes": null
+    }
+  ]
+}

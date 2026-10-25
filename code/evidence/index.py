@@ -8,6 +8,7 @@ Confirmed by AGENTS.md:209:
 """
 
 import os
+import re
 import csv
 from datetime import datetime
 from typing import List, Dict, Tuple, Optional
@@ -17,6 +18,7 @@ from .log_parser import parse_log
 from .sql_parser import parse_sql
 from .txt_parser import parse_txt
 from .pdf_parser import parse_pdf
+from .image_parser import parse_image
 from code.identity import IdentitySet
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -24,10 +26,20 @@ DATASET_DIR = os.path.join(REPO_ROOT, "dataset")
 
 
 class EvidenceIndex:
-    def __init__(self, dataset_dir: str = DATASET_DIR):
+    def __init__(self, dataset_dir: str = DATASET_DIR, sidecar_dir: Optional[str] = None):
         self.dataset_dir = dataset_dir
+        if sidecar_dir is not None:
+            self.sidecar_dir = sidecar_dir
+        else:
+            cand_sidecar = os.path.join(REPO_ROOT, "data", "visual_sidecars")
+            if not os.path.exists(cand_sidecar):
+                alt_sidecar = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "visual_sidecars")
+                if os.path.exists(alt_sidecar):
+                    cand_sidecar = alt_sidecar
+            self.sidecar_dir = cand_sidecar
         self.manifest: List[dict] = []
         self.activities: List[dict] = []
+        self.diagnostics: List[str] = []
         self._load_manifest()
         self._load_activities()
 
@@ -42,10 +54,11 @@ class EvidenceIndex:
             with open(act_path, "r", encoding="utf-8", errors="replace") as f:
                 self.activities = list(csv.DictReader(f))
 
-    def get_eligible_files(self, audit_at: str) -> List[dict]:
+    def get_eligible_files(self, audit_at: str, requested_at: Optional[str] = None) -> List[dict]:
         """
         Filters evidence files captured at or before case audit_at.
-        Boundary: captured_at <= audit_at (inclusive).
+        Enforces upper cutoff: captured_at <= audit_at (inclusive).
+        Global lower cutoff of requested_at is removed per contract to permit legitimate pre-request evidence.
         """
         eligible = []
         for e in self.manifest:
@@ -57,42 +70,57 @@ class EvidenceIndex:
     def get_candidate_resources(self, identity: IdentitySet, audit_at: str,
                                 requested_at: Optional[str] = None,
                                 reported_at: Optional[str] = None) -> set:
+        """
+        Discovers candidate resources grounded exclusively in explicit identity matches
+        from eligible activities at or before audit_at.
+        Uses exact token and word-boundary matching to prevent substring collisions (e.g. user_1 vs user_10).
+        """
         candidates = set()
-        # Account ID convention for users: user_01 -> account_001, account_1
-        num_str = "".join(ch for ch in identity.user_id if ch.isdigit())
-        if num_str:
-            candidates.add(f"account_{num_str}")
-            candidates.add(f"account_{num_str.zfill(3)}")
-            try:
-                candidates.add(f"account_{int(num_str)}")
-            except ValueError:
-                pass
+        if not identity:
+            return candidates
 
-        # Filter activities at or before audit_at
         eligible_acts = [a for a in self.activities if a.get("event_time", "") <= audit_at]
 
-        # Activities directly naming user or emails
         for a in eligible_acts:
             a_res = a.get("resource_id")
             if not a_res:
                 continue
-            a_text = f"{a.get('details', '')} {a.get('resource_id', '')}"
-            if identity.user_id in a_text or any(em in a_text for em in identity.emails):
-                candidates.add(a_res)
+            details = a.get("details", "")
+            combined = f"{details} {a_res}".lower()
+            tokens = set(re.split(r'[\s,;:\'\"=()<>{}\[\]]+', combined))
 
-        # Deletion worker window around reported_at
-        if reported_at:
-            try:
-                rep_dt = datetime.fromisoformat(reported_at.replace("Z", "+00:00"))
-                for a in eligible_acts:
-                    if a.get("source_system") == "deletion_worker":
-                        a_time = a.get("event_time", "")
-                        if a_time:
-                            a_dt = datetime.fromisoformat(a_time.replace("Z", "+00:00"))
-                            if abs((a_dt - rep_dt).total_seconds()) <= 7200:
-                                candidates.add(a["resource_id"])
-            except Exception:
-                pass
+            matched = False
+            if identity.user_id and identity.user_id.lower() in tokens:
+                matched = True
+            if not matched:
+                for em in identity.emails:
+                    if em and em.lower() in tokens:
+                        matched = True
+                        break
+            if not matched:
+                for h in identity.email_hashes:
+                    if h and h.lower() in tokens:
+                        matched = True
+                        break
+            if not matched:
+                for ph in identity.phones:
+                    if ph and ph in tokens:
+                        matched = True
+                        break
+            if not matched:
+                for em in identity.emails:
+                    if em:
+                        pattern = r'(?<![a-zA-Z0-9_\-\.])' + re.escape(em.lower()) + r'(?![a-zA-Z0-9_\-\.])'
+                        if re.search(pattern, combined):
+                            matched = True
+                            break
+            if not matched and identity.user_id:
+                pattern = r'(?<![a-zA-Z0-9_])' + re.escape(identity.user_id.lower()) + r'(?![a-zA-Z0-9_])'
+                if re.search(pattern, combined):
+                    matched = True
+
+            if matched:
+                candidates.add(a_res)
 
         return candidates
 
@@ -103,7 +131,7 @@ class EvidenceIndex:
         """
         Parses all eligible evidence files for the case's IdentitySet at or before audit_at.
         """
-        eligible_files = self.get_eligible_files(audit_at)
+        eligible_files = self.get_eligible_files(audit_at, requested_at)
         all_observations: List[ResourceObservation] = []
 
         if candidate_resources is None:
@@ -115,21 +143,27 @@ class EvidenceIndex:
             cat = e["captured_at"]
 
             if not os.path.exists(fpath):
+                self.diagnostics.append(f"Missing evidence file for {fid} at path: {fpath}")
                 continue
 
             ext = os.path.splitext(fpath)[1].lower()
             obs: List[ResourceObservation] = []
 
-            if ext == ".json":
-                obs = parse_json(fpath, fid, cat, identity, candidate_resources)
-            elif ext == ".log":
-                obs = parse_log(fpath, fid, cat, identity, candidate_resources)
-            elif ext == ".sql":
-                obs = parse_sql(fpath, fid, cat, identity, candidate_resources)
-            elif ext == ".txt":
-                obs = parse_txt(fpath, fid, cat, identity)
-            elif ext == ".pdf":
-                obs = parse_pdf(fpath, fid, cat, identity)
+            try:
+                if ext == ".json":
+                    obs = parse_json(fpath, fid, cat, identity, candidate_resources)
+                elif ext == ".log":
+                    obs = parse_log(fpath, fid, cat, identity, candidate_resources)
+                elif ext == ".sql":
+                    obs = parse_sql(fpath, fid, cat, identity, candidate_resources)
+                elif ext == ".txt":
+                    obs = parse_txt(fpath, fid, cat, identity)
+                elif ext == ".pdf":
+                    obs = parse_pdf(fpath, fid, cat, identity, sidecar_dir=self.sidecar_dir, audit_at=audit_at)
+                elif ext == ".png":
+                    obs = parse_image(fpath, fid, cat, identity, candidate_resources, sidecar_dir=self.sidecar_dir, audit_at=audit_at)
+            except Exception as ex:
+                self.diagnostics.append(f"Parse failure for {fid} ({fpath}): {str(ex)}")
 
             all_observations.extend(obs)
 
